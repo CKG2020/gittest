@@ -1,7 +1,7 @@
 package divideAndConquer;
 
 import java.util.Arrays;
-
+//归并排序
 public class MergeSort {
 
     public int[] sort(int[] sourceArray) throws Exception {
