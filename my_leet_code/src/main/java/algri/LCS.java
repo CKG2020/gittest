@@ -64,8 +64,8 @@ public class LCS {
         LCS.y = y;
         int m = x.length;
         int n = y.length;
-//        System.out.println(compare(m - 1, n - 1));
-        compare(m-1,n-1);
+        System.out.println(compare(m - 1, n - 1));
+//        compare(m-1,n-1);
 
 
 //        String firstStr = "ABCBDAB";

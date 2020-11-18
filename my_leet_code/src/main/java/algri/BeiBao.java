@@ -26,8 +26,6 @@ public class BeiBao {
                     C[i][j]=C[i-1][j];
                 }
             }
-
-
         }
 
         for (int i = 0; i < x; i++) {
