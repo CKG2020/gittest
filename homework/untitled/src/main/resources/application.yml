@@ -1,0 +1,17 @@
+demo:
+  user:
+    id: '111'
+    name: 'aaa'
+  number:
+    value1: ${random.int}
+    value2: ${random.long}
+    value3: ${random.uuid}
+
+spring:
+  profiles:
+    active: dev
+#  datasource:
+#    url: jdbc:mysql://192.168.56.101:3306/smkt
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.jdbc.Driver

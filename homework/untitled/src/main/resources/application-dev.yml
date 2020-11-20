@@ -1,0 +1,8 @@
+server:
+  port: 1111
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.56.101:3306/smkt
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
