@@ -18,6 +18,10 @@ Thumbs.db
 *.iml
 *.ipr
 *.svg
+*.android_data_binding
+*.js
+*.css
+*.yarn.lock
 
 ### NetBeans ###
 /nbproject/private/
