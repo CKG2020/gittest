@@ -18,8 +18,8 @@
         <div id="app" style="margin-top:35px">
             <i-form ref="formInline" :model="formInline" :rules="ruleInline" style="width: 250px"
                      method="post">
-                <form-item prop="user">管理员登录
-                    <i-input type="text" v-model="formInline.user" placeholder="Username" size="large">
+                <form-item prop="myUser">管理员登录
+                    <i-input type="text" v-model="formInline.myUser" placeholder="Username" size="large">
                         <icon type="ios-person-outline" slot="prepend"></icon>
                     </i-input>
                 </form-item>
@@ -44,12 +44,12 @@
         data () {
             return {
                 formInline: {
-                    user: '',
+                    myUser: '',
                     password: ''
                 },
                 ruleInline: {
-                    user: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                    myUser: [
+                        { required: true, message: 'Please fill in the myUser name', trigger: 'blur' }
                     ],
                     password: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
@@ -73,7 +73,7 @@
                 this.$refs[name].resetFields();
             },
             save() {
-                let Sno=this.formInline.user;
+                let Sno=this.formInline.myUser;
                 let Spwd=this.formInline.password;
                 $.ajax({
                     type: "post",

@@ -1,4 +1,4 @@
 package com.easyarch.service;
 
-public class UserInfoService {
-}
+//public class UserInfoService {
+//}

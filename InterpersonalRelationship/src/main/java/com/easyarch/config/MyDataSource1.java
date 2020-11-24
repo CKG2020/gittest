@@ -1,4 +1,4 @@
-//package com.example.javaanli.demo.config;
+package com.easyarch.config;//package com.example.javaanli.demo.config;
 //
 //
 //import com.alibaba.druid.pool.DruidDataSource;

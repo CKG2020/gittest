@@ -1,2 +1,4 @@
-package com.easyarch;public class XX {
+package com.easyarch;
+
+public class XX {
 }

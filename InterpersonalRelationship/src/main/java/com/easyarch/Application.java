@@ -1,4 +1,4 @@
-package Com.easyArch;
+package com.easyarch;
 
 
 import org.springframework.boot.SpringApplication;

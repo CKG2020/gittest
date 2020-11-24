@@ -1,4 +1,4 @@
-package Com.easyArch.entity;
+package com.easyarch.entity;
 
 
 import lombok.Data;
