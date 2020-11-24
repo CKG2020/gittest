@@ -22,7 +22,7 @@ Thumbs.db
 *.js
 *.css
 *.yarn.lock
-
+*.docx
 ### NetBeans ###
 /nbproject/private/
 /build/
