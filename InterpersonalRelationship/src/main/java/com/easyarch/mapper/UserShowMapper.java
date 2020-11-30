@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.websocket.server.ServerEndpoint;
 
+//userInfo表格的查询
 @Repository
 @Mapper
 public interface UserShowMapper {
@@ -45,7 +46,7 @@ public interface UserShowMapper {
             "        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Sclass like concat(concat(\"%\",#{sclass}),\"%\")")
     UserShow findByClass(@Param("sclass") String sclass);
 
-
+//===============================＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 
 

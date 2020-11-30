@@ -2,7 +2,7 @@ package com.easyarch.mapper;
 
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
-
+//pyq表格
 @Repository
 @Mapper
 public interface PyqMapper {

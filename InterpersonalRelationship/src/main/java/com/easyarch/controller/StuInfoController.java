@@ -29,8 +29,10 @@ public class StuInfoController {
 
     @RequestMapping(value = "moreInfo")
     public String MoreInfo(){
+
         return "/stu/moreInfo";
     }
+
 
     @RequestMapping(value="newMsgCount")
     @ResponseBody

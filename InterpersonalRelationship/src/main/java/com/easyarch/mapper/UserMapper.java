@@ -5,10 +5,25 @@ import com.easyarch.entity.UserShow;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
-
+//userInfo的查询
 @Repository
 @Mapper
 public interface UserMapper {
+    //登录查询
+    @Select("select * from SSHpro.UserInfo where Sno= #{Sno}")
+    MyUser loginUser(String Sno);
+    //注册验证学号是否重复
+    @Select("  select Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth from SSHpro.UserInfo\n" +
+            "        where Sno = #{sno}")
+    MyUser findUserBySno(@Param("sno") String sno);
+
+    //添加Myuser
+    @Insert(" insert into SSHpro.UserInfo(Sno,Spwd) values (#{sno},#{spwd})")
+    int addUser(@Param("sno") String sno,@Param("spwd") String spwd);
+
+
+
+
 
     @Select("select * from SSHpro.UserInfo where Sno= #{Sno}")
     public MyUser selectUser(@Param("sno")String  sno);
@@ -29,9 +44,6 @@ public interface UserMapper {
 //    @Select("  select COUNT(*) from SSHpro.UserInfo")
 //    int findallcount();
 
-      @Select("  select Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth from SSHpro.UserInfo\n" +
-              "        where Sno = #{sno}")
-    MyUser findUserBySno(@Param("sno") String sno);
 
 
       //汇总查询
@@ -52,9 +64,8 @@ public interface UserMapper {
    @Select("  select COUNT(*) from SSHpro.UserInfo where Sno like  concat(concat(\"%\",#{sno}),\"%\")")
    int findSnoCount(@Param("sno") String sno);
 
-   //添加Myuser
-    @Insert(" insert into SSHpro.UserInfo(Sno,Spwd) values (#{sno},#{spwd})")
-    int addUser(@Param("sno") String sno,@Param("spwd") String spwd);
+
+
     //更新myuser 信息
     @Update("update SSHpro.UserInfo set\n" +
             "        Sname=#{sname},Sage=#{sage},\n" +
@@ -63,6 +74,7 @@ public interface UserMapper {
             "        Gender=#{gender},Birth=#{birth}\n" +
             "        where Sno=#{sno};")
     int updateUser(@Param("sname") String sname,@Param("sage") int sage,@Param("scall") String scall,
+                   @Param("collage") String collage,
                    @Param("major")String major,@Param("sclass") String sclass,@Param("gender") int gender,
                    @Param("birth")String birth,@Param("sno") String sno);
 
@@ -79,40 +91,5 @@ public interface UserMapper {
     String findUserNameBySno(@Param("sno")String sno);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//    int updateUser(String name, int age, String call, String collage, String major, String sclass, int gender, String birth, String sno);
 }

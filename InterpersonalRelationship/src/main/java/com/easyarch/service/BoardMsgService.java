@@ -68,17 +68,17 @@ public class BoardMsgService {
 
     public boolean updateUser(FormValidate form) {
         MyUser user = new MyUser();
-        user.setSname(form.getName());
-        user.setBirth(form.getDate());
+        user.setSname(form.getSname());
+        user.setBirth(form.getBirth());
         user.setCollage(form.getCollage());
         user.setGender(form.getGender());
         user.setSno(form.getSno());
         user.setSage(form.getAge());
         user.setMajor(form.getMajor());
         user.setSclass(form.getSclass());
-        user.setScall(form.getCall());
+        user.setScall(form.getScall());
 
-        int i = userMapper.updateUser(user.getSname(), user.getSage(), user.getScall(), user.getMajor(), user.getSclass(), user.getGender(), user.getBirth(), user.getSno());
+        int i = userMapper.updateUser(user.getSname(), user.getSage(), user.getScall(),user.getCollage(),user.getMajor(), user.getSclass(), user.getGender(), user.getBirth(), user.getSno());
 
         if (i != 0) {
             return true;
