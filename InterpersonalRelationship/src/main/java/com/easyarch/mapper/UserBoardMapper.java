@@ -58,10 +58,10 @@ public interface UserBoardMapper {
     UserBoard findUserBoard(@Param("sno") String sno);
 
 
-    @Select("        select msgCount from SSHpro.UserBoard where sno=#{sno}\n")
+    @Select("        select msgCount from SSHpro.UserBoard where Sno=#{sno}\n")
     int historyMsgCount(@Param("sno") String sno);
 
-    @Select("        select requestCount from SSHpro.UserBoard where sno=#{sno}\n")
+    @Select("        select requestCount from SSHpro.UserBoard where Sno=#{sno}\n")
     int historyRequestCount(@Param("sno") String sno);
 
 //    @Update("        update SSHpro.UserBoard set msgCount=#{count} where sno=#{sno}\n")

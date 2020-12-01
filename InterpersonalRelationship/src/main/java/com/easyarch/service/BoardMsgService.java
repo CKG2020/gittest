@@ -56,12 +56,12 @@ public class BoardMsgService {
 
 
     public int tipRequestCount(String sno) {
-
         int m = pyqMapper.countRequest(sno);
         countRequest = userBoardMapper.historyRequestCount(sno);
         if (m > countRequest) {
             return m - countRequest;
-        } else {
+        }
+        else {
             return 0;
         }
     }

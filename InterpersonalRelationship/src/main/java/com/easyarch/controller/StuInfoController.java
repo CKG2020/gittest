@@ -27,11 +27,7 @@ public class StuInfoController {
 
 
 
-    @RequestMapping(value = "moreInfo")
-    public String MoreInfo(){
 
-        return "/stu/moreInfo";
-    }
 
 
     @RequestMapping(value="newMsgCount")
@@ -65,7 +61,13 @@ public class StuInfoController {
 
 
 
+    @RequestMapping(value = "moreInfo")
+    public String moreInfo(){
 
+        return "/stu/moreInfo";
+    }
+
+//聊天
     @RequestMapping(value = "chat")
     public String ChatRoom(){
         HttpSession session = request.getSession();
@@ -73,6 +75,15 @@ public class StuInfoController {
         System.out.println(user.getSname());
         return "test/chat";
     }
+
+
+//问题
+    @RequestMapping(value = "questions")
+    public String Questions(){
+        return "stu/questions";
+    }
+
+
 
     @RequestMapping(value = "analyzing")
     public String Analyzing(){

@@ -11,6 +11,7 @@ public interface PyqMapper {
     @Select("        select COUNT(*) from SSHpro.pyq where Sno2=#{sno} and addStatus=0\n")
     int countRequest(@Param("sno") String sno);
     @Insert(" insert into SSHpro.pyq(Sno1,Sno2,addStatus) values (#{sno1},#{sno2},0)")
+
     int addFriendRequest(@Param("sno1") String sno1,@Param("sno2") String sno2);
 
     @Update("   update SSHpro.pyq set addStatus=1\n" +

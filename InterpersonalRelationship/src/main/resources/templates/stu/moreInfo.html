@@ -70,13 +70,13 @@ newRequestCount()">
                             <div style="margin-top: 3%;margin-left: 7%;width: 400px">
                                 <i-form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80":disabled="isdisabledFn">
                                     <form-item label="姓名" prop="name">
-                                        <i-input v-model="formValidate.name" placeholder="Enter your name" style="width: 200px"></i-input>
+                                        <i-input v-model="formValidate.sname" placeholder="Enter your name" style="width: 200px"></i-input>
                                     </form-item>
                                     <form-item label="年龄" prop="age">
                                         <i-input v-model="formValidate.age" placeholder="Enter your age" style="width: 200px"></i-input>
                                     </form-item>
                                     <form-item label="电话" prop="call">
-                                        <i-input v-model="formValidate.call" placeholder="Enter your phone-number" style="width: 200px"></i-input>
+                                        <i-input v-model="formValidate.scall" placeholder="Enter your phone-number" style="width: 200px"></i-input>
                                     </form-item>
                                     <form-item label="学院" prop="collage" style="width: 300px" >
                                         <i-select v-model="formValidate.collage" placeholder="Select your collage">
@@ -257,7 +257,7 @@ newRequestCount()">
         },
         methods:{
             time1(e){
-                this.formValidate.date=e;
+                this.formValidate.birth=e;
             },
             change(){
                 mVue.choose="xxx";
@@ -300,19 +300,19 @@ newRequestCount()">
         window.location.href="/chat";
     }
     function questions() {
-        mVue.choose="Questions";
+        mVue.choose="questions";
         window.location.href="/questions";
     }
     function analyzing() {
-        mVue.choose="Analyzing";
+        mVue.choose="analyzing";
         window.location.href="/analyzing/";
     }
     function board() {
-        mVue.choose="Board";
+        mVue.choose="board";
         window.location.href="/board";
     }
     function friendList() {
-        mVue.choose="FriendList";
+        mVue.choose="friendList";
         window.location.href="/friendList/";
     }
 
