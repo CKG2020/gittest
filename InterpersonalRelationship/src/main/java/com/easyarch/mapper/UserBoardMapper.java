@@ -43,8 +43,15 @@ public interface UserBoardMapper {
             "        where Sno = #{sno}")
     public  int updateFinishedQuestion(@Param("isFinishedQuestion") boolean isFinishedQuestion,@Param("scores") int scores,@Param("sno") String sno);
 
+
     @Select("        select SSHpro.UserBoard.IsFinishedQuestion from SSHpro.UserBoard where Sno=#{sno}\n")
     public boolean isFinished(@Param("sno") String sno);
+
+
+
+
+
+
 
 //    <select id="isAllFinished">
 //    select SSHpro.UserBoard.IsFinishedQuestion,Sno from SSHpro.UserBoard
@@ -64,8 +71,8 @@ public interface UserBoardMapper {
     @Select("        select requestCount from SSHpro.UserBoard where Sno=#{sno}\n")
     int historyRequestCount(@Param("sno") String sno);
 
-//    @Update("        update SSHpro.UserBoard set msgCount=#{count} where sno=#{sno}\n")
-//    int setHistoryMsgCount ();
+    @Update("   update SSHpro.UserBoard set msgCount=#{count} where sno=#{sno}\n")
+    int setHistoryMsgCount (@Param("sno") String sno,@Param("count") int count);
 
     //更新出生日
     @Update(" update SSHpro.UserBoard set Birth=#{birth} where Sno=#{sno}")

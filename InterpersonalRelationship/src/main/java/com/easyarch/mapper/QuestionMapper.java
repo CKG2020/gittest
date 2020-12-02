@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface QuestionMapper {
     @Select(" select SSHpro.Questions.PageUrl from SSHpro.Questions")
-   public String selectQuestion();
+   public String loadQuestions();
 
 }

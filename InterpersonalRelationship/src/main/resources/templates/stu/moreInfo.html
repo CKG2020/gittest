@@ -19,9 +19,9 @@ newRequestCount()">
             <sider collapsible :collapsed-width="78" v-model="isCollapsed">
                 <i-menu theme="dark" width="auto" :class="menuitemClasses" open-names="['1','2']">
                     <submenu name="1">
-                        <template slot="title"  icon="icon/ios-paper.svg">
+                        <template slot="title"  icon="/static/icon/ios-paper.svg">
                             个人中心
-                        </template  >
+                        </template>
                         <menu-item name="1-1">完善信息</menu-item>
                         <Badge :count="countMsg">
                             <menu-item name="1-2">
@@ -41,7 +41,7 @@ newRequestCount()">
                         </menu-item>
                     </submenu>
                     <submenu name="2">
-                        <template slot="title" icon="icno/ios-people.svg" >聊天室
+                        <template slot="title" icon="/static/icno/ios-people.svg" >聊天室
                         </template>
                         <Badge :count="countNewRequest">
                             <menu-item name="2-1">

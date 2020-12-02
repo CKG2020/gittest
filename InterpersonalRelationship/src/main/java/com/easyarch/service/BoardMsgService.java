@@ -1,8 +1,6 @@
 package com.easyarch.service;
 
-import com.easyarch.entity.FormValidate;
-import com.easyarch.entity.MyUser;
-import com.easyarch.entity.UserShow;
+import com.easyarch.entity.*;
 import com.easyarch.mapper.BoardMsgMapper;
 import com.easyarch.mapper.PyqMapper;
 import com.easyarch.mapper.UserBoardMapper;
@@ -31,17 +29,12 @@ public class BoardMsgService {
     UserMapper userMapper;
 
 
-
-
-      List<UserShow> userList;
+    List<UserShow> userList;
 
     private int countMsg = 0;
     private int countRequest = 0;
     private int times = 0;
 
-    public int countBoardMsg(String sno) {
-        return boardMsgMapper.boardMsgCount(sno);
-    }
 
     public int tipMsgCount(String sno) {
         int count1 = boardMsgMapper.boardMsgCount(sno);
@@ -60,8 +53,7 @@ public class BoardMsgService {
         countRequest = userBoardMapper.historyRequestCount(sno);
         if (m > countRequest) {
             return m - countRequest;
-        }
-        else {
+        } else {
             return 0;
         }
     }
@@ -78,7 +70,7 @@ public class BoardMsgService {
         user.setSclass(form.getSclass());
         user.setScall(form.getScall());
 
-        int i = userMapper.updateUser(user.getSname(), user.getSage(), user.getScall(),user.getCollage(),user.getMajor(), user.getSclass(), user.getGender(), user.getBirth(), user.getSno());
+        int i = userMapper.updateUser(user.getSname(), user.getSage(), user.getScall(), user.getCollage(), user.getMajor(), user.getSclass(), user.getGender(), user.getBirth(), user.getSno());
 
         if (i != 0) {
             return true;
@@ -87,13 +79,39 @@ public class BoardMsgService {
         }
     }
 
-    public MyUser findUserBySno(String sno){
-         return  userMapper.findUserBySno(sno);
+    public MyUser findUserBySno(String sno) {
+        return userMapper.findUserBySno(sno);
     }
 
     public void setTimes(int times) {
         this.times = times;
     }
+
+    public int countBoardMsg(String sno) {
+        return boardMsgMapper.boardMsgCount(sno);
+    }
+    public int setHistoryMsgCount(Tips tips) {
+        System.out.println(tips);
+        userBoardMapper.setHistoryMsgCount(tips.getSno(), tips.getCount());
+//        sqlSession.update("UserBoard.setHistoryMsgCount", tips);
+//        sqlSession.commit();
+        return 0;
+    }
+
+    public int historyMsgCount(String sno) {
+        countMsg=countBoardMsg(sno);
+        System.out.println(countMsg);
+        Tips tips = new Tips();
+        tips.setSno(sno);
+        tips.setCount(countMsg);
+        setHistoryMsgCount(tips);
+        return 0;
+    }
+
+    public List<BoardMsg> showBoardMsg(String sno) {
+        return boardMsgMapper.showBoardMsg(sno);
+    }
+
 
 
 

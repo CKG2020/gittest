@@ -42,6 +42,13 @@ public class StuInfoController {
     @ResponseBody
     public int newRequestCount(){
         HttpSession session = request.getSession();
+        System.out.println("这是个什么问题？？？？？？？？？？？？");
+//        boardMsgService.tipMsgCount()
+        Object testuser = session.getAttribute("user");
+        MyUser myUser=(MyUser)testuser;
+        System.out.println(myUser.toString());
+        int num = boardMsgService.tipRequestCount(((MyUser) session.getAttribute("user")).getSno());
+        System.out.println(num);
         return boardMsgService.tipRequestCount(((MyUser)session.getAttribute("user")).getSno());
     }
 
@@ -88,18 +95,18 @@ public class StuInfoController {
     @RequestMapping(value = "analyzing")
     public String Analyzing(){
 //        userService.tipMsgCount()
-        return "stu/Analyzing";
+        return "stu/analyzing";
     }
 
     @RequestMapping(value = "board")
     public String Board(){
         boardMsgService.setTimes(0);
-        return "stu/Board";
+        return "stu/board";
     }
     @RequestMapping(value = "friendList")
     public String FriendList(){
 
-        return "stu/FriendList";
+        return "stu/friendList";
     }
 
 
