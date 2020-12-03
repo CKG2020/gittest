@@ -169,7 +169,7 @@
 <script>
     function newMsgCount() {
         $.ajax({
-            url:'/stu/newMsgCount',
+            url:'/newMsgCount',
             type:'post',
             success(res){
                 mVue.countMsg=res;
@@ -179,10 +179,12 @@
     }
     function changeHistoryRequestCount() {
         $.ajax({
-            url:'/stu/changeHistoryRequest',
+            url:'/pyq/changeHistoryRequest',
             type:'post'
         })
     }
+
+
     function countName() {
         $.ajax({
             url:'/stu/findNameCount',

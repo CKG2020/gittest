@@ -4,7 +4,7 @@ package com.easyarch.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class dateUtil {
+public class DateUtil {
 //    private static dateUtil util= new dateUtil();
 //    private dateUtil(){
 //
