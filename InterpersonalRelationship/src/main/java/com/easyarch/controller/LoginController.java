@@ -2,7 +2,7 @@ package com.easyarch.controller;
 
 import com.easyarch.entity.FormValidate;
 import com.easyarch.entity.MyUser;
-import com.easyarch.service.UserService;
+import com.easyarch.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class LoginController {
     @Autowired
     HttpServletRequest request;
     @Autowired
-    UserService userService;
+    UserInfoService userService;
 
     @RequestMapping("/loginAdmin")
     public String loginAdmin(){

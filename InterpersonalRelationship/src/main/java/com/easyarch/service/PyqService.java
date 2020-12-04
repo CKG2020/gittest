@@ -25,4 +25,12 @@ public class PyqService {
         return 0;
     }
 
+//查找好友的数量
+    public int findFriendsCount(String sno) {
+
+       return pyqMapper.countFriends(sno);
+    }
+
+
+
 }

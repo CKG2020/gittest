@@ -187,7 +187,7 @@
 
     function countName() {
         $.ajax({
-            url:'/stu/findNameCount',
+            url:'findNameCount',
             type:'post',
             data:{
                 "Sname":mVue.searchContext
@@ -199,7 +199,7 @@
     }
     function countSno() {
         $.ajax({
-            url:'/stu/findSnoCount',
+            url:'findSnoCount',
             type:'post',
             data:{
                 "Sno":mVue.searchContext,
@@ -250,7 +250,7 @@
     }
     function friendsCount() {
         $.ajax({
-            url:'/stu/friendsCount',
+            url:'/friendsCount',
             type:'post',
             success(res) {
                 mVue.count=res;

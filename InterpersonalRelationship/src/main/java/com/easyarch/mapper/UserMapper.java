@@ -5,6 +5,9 @@ import com.easyarch.entity.UserShow;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
 //userInfo的查询
 @Repository
 @Mapper
@@ -34,7 +37,7 @@ public interface UserMapper {
     @Select("  select\n" +
             "        UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth\n" +
             "        from SSHpro.UserInfo where UserInfo.Sno in (select SSHpro.pyq.Sno2 from SSHpro.pyq where Sno1=#{sno} and addStatus=1)")
-    MyUser  myFriends(@Param("sno") String sno);
+    List<MyUser>  myFriends(@Param("sno") String sno);
 
  @Select(" select\n" +
          "        UserInfo.Sno, Sname, Sage, Scall, Collage, Major, Sclass, Gender, Birth\n" +
