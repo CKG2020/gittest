@@ -33,6 +33,7 @@ import java.util.List;
 
         //按学号查找　　确定是否重复
         public MyUser findUserBySno(String Sno){
+
             return userMapper.findUserBySno(Sno);
         }
 
@@ -71,5 +72,7 @@ import java.util.List;
         return userMapper.myFriends(sno);
     }
 
-    }
+
+
+}
 

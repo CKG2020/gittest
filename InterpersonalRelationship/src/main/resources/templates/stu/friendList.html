@@ -260,7 +260,7 @@
 
     function showFriends() {
         $.ajax({
-            url:'/stu/FriendList/showFriends',
+            url:'/friendList/showFriends',
             type:'post',
             success(res) {
                 let msg=JSON.stringify(res);
@@ -331,7 +331,7 @@
             },
             remove (index) {
                 $.ajax({
-                   url:'/stu/delFriend',
+                   url:'/delFriend',
                    type:'post',
                    data:{
                        "sno":this.dataMy[index].sno
@@ -350,7 +350,7 @@
             },
             accept(index){
                 $.ajax({
-                    url:'/stu/acceptRequest',
+                    url:'/acceptRequest',
                     type:'post',
                     data:{
                         "sno":this.dataRequest[index].sno
@@ -363,7 +363,7 @@
             },
             refuse(index){
                 $.ajax({
-                    url:'/stu/refuseRequest',
+                    url:'/refuseRequest',
                     type:'post',
                     data:{
                         "sno":this.dataRequest[index].sno
@@ -397,7 +397,7 @@
             },
             addRequest(index){
                 $.ajax({
-                    url:'/stu/addRequest',
+                    url:'/addRequest',
                     type:'post',
                     data:{
                         "sno":this.dataSearch[index].sno
@@ -422,7 +422,7 @@
                 countSno(content);
                 $.ajax({
                     type:'post',
-                    url:'/stu/findBySno',
+                    url:'/findBySno',
                     data:{
                         "Sno":mVue.searchContext,
                     },
@@ -438,7 +438,7 @@
                 console.log(mVue.searchContext);
                 $.ajax({
                     type:'post',
-                    url:'/stu/findByName',
+                    url:'/findByName',
                     data: {
                         "Sname": mVue.searchContext
                     },

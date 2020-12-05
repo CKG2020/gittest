@@ -1,5 +1,6 @@
 package com.easyarch.service;
 
+import com.easyarch.entity.FriendRequest;
 import com.easyarch.entity.Tips;
 import com.easyarch.mapper.PyqMapper;
 import com.easyarch.mapper.UserBoardMapper;
@@ -32,5 +33,42 @@ public class PyqService {
     }
 
 
+
+    public boolean delFriend(String sno1, String sno2) {
+
+        pyqMapper.delFriend1(sno1,sno2);
+        pyqMapper.delFriend2(sno1,sno2);
+        return true;
+    }
+
+    public boolean acceptRequest(String sno1, String sno2) {
+
+        pyqMapper.acceptAdd(sno1, sno2);
+        pyqMapper.addFriend(sno1, sno2);
+
+
+        return true;
+    }
+
+
+    public boolean refuseRequest(String sno1, String sno2) {
+//        FriendRequest request = new FriendRequest();
+//        request.setSno1(sno1);
+//        request.setSno2(sno2);
+//        request.setAddStatus(false);
+//        userDao.refuseRequest(request);
+        pyqMapper.refuseAdd(sno1,sno2);
+        return true;
+    }
+
+    public boolean addRequest(String sno1, String sno2) {
+//        FriendRequest request = new FriendRequest();
+//        request.setSno1(sno1);
+//        request.setSno2(sno2);
+//        request.setAddStatus(false);
+//        userDao.addRequest(request);
+        pyqMapper.addFriendRequest(sno1, sno2);
+        return true;
+    }
 
 }

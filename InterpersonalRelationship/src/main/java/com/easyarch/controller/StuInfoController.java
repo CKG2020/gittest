@@ -3,6 +3,7 @@ package com.easyarch.controller;
 import com.easyarch.entity.BoardMsg;
 import com.easyarch.entity.FormValidate;
 import com.easyarch.entity.MyUser;
+import com.easyarch.entity.UserShow;
 import com.easyarch.mapper.UserMapper;
 import com.easyarch.service.BoardMsgService;
 import com.easyarch.service.PyqService;
@@ -140,5 +141,70 @@ public class StuInfoController {
     }
 
 
+
+
+    @RequestMapping(value="delFriend")
+    @ResponseBody
+    public String delFriend(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        pyqService.delFriend(((MyUser)session.getAttribute("user")).getSno(),sno);
+        return "";
+    }
+
+
+    @RequestMapping(value="acceptRequest")
+    @ResponseBody
+    public String acceptRequest(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        pyqService.acceptRequest(sno,((MyUser)session.getAttribute("user")).getSno());
+        return "";
+    }
+
+
+    @RequestMapping(value="refuseRequest")
+    @ResponseBody
+    public String refuseRequest(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        pyqService.refuseRequest(sno,((MyUser)session.getAttribute("user")).getSno());
+        return "";
+    }
+
+
+
+    @RequestMapping(value="addRequest")
+    @ResponseBody
+    public String addRequest(@RequestParam String sno){
+        HttpSession session = request.getSession();
+        pyqService.addRequest(((MyUser)session.getAttribute("user")).getSno(),sno);
+        return "";
+    }
+
+
+    //此处可能有问题　就是关于数据库收集的ＭｙＵｓｅｒ　是直接返回ｌｉｓｔ呢还是　还是说按照我下面这样式的呢？？？？有待考证
+    @RequestMapping(value="findBySno")
+    @ResponseBody
+    public List<UserShow> findBySno(@RequestParam String Sno){
+        System.out.println("Sno"+Sno);
+        return (List<UserShow>) userInfoService.findUserBySno(Sno);
+    }
+
+
+//    @RequestMapping(value="addRequest")
+//    @ResponseBody
+//    public String addRequest(@RequestParam String sno){
+//        HttpSession session = request.getSession();
+//        pyqService.addRequest(((MyUser)session.getAttribute("user")).getSno(),sno);
+//        return "";
+//    }
+//
+//
+//
+//    @RequestMapping(value="refuseRequest")
+//    @ResponseBody
+//    public String refuseRequest(@RequestParam String sno){
+//        HttpSession session = request.getSession();
+//        userService.refuseRequest(sno,((User)session.getAttribute("user")).getSno());
+//        return "";
+//    }
 
 }
