@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import javax.websocket.server.ServerEndpoint;
+import java.util.List;
 
 //userInfo表格的查询
 @Repository
@@ -34,7 +35,8 @@ public interface UserShowMapper {
     @Select("select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores\n" +
             "        from SSHpro.UserInfo,SSHpro.UserBoard\n" +
             "        where( UserInfo.Sno=UserBoard.Sno ) and UserInfo.Sname like  concat(concat(\"%\",#{sname}),\"%\")")
-    UserShow findByName(@Param("sname") String sname);
+   List<UserShow> findByName(@Param("sname") String sname);
+
 
     @Select("  select SSHpro.UserInfo.Sno,Sage,Scall,Sname,Sclass,Collage,Major,SSHpro.UserBoard.Scores\n" +
             "        from SSHpro.UserInfo,SSHpro.UserBoard\n" +

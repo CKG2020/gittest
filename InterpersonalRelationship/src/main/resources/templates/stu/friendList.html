@@ -452,7 +452,7 @@
             requestCount(){
                 $.ajax({
                     type:'post',
-                    url:'/stu/countRequest',
+                    url:'/countRequest',
                     success(res){
                         if(res==0){
                             mVue.newMes="你还没有新的好友申请哟～";
@@ -465,7 +465,7 @@
             getRequest(){
                 $.ajax({
                     type:'post',
-                    url:'/stu/FriendList/getRequest',
+                    url:'/friendList/getRequest',
                     success(res) {
                         let msg = JSON.stringify(res);
                         msg = $.parseJSON(msg);

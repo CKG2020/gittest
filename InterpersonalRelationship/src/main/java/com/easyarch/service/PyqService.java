@@ -71,4 +71,9 @@ public class PyqService {
         return true;
     }
 
+
+    public int countRequest(String sno) {
+        return  pyqMapper.countRequest(sno);
+//        return sqlSession.selectOne("UserBoard.countRequest",sno);
+    }
 }

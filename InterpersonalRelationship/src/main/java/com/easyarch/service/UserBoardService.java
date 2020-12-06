@@ -1,5 +1,6 @@
 package com.easyarch.service;
 
+import com.easyarch.entity.MyUser;
 import com.easyarch.entity.ReturnAnswer;
 import com.easyarch.entity.Tips;
 import com.easyarch.entity.UserBoard;

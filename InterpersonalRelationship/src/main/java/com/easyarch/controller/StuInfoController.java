@@ -189,22 +189,30 @@ public class StuInfoController {
     }
 
 
-//    @RequestMapping(value="addRequest")
-//    @ResponseBody
-//    public String addRequest(@RequestParam String sno){
-//        HttpSession session = request.getSession();
-//        pyqService.addRequest(((MyUser)session.getAttribute("user")).getSno(),sno);
-//        return "";
-//    }
-//
-//
-//
-//    @RequestMapping(value="refuseRequest")
-//    @ResponseBody
-//    public String refuseRequest(@RequestParam String sno){
-//        HttpSession session = request.getSession();
-//        userService.refuseRequest(sno,((User)session.getAttribute("user")).getSno());
-//        return "";
-//    }
+
+    @RequestMapping(value="findByName")
+    @ResponseBody
+    public List<UserShow> findbyName(@RequestParam String Sname){
+
+        return userInfoService.findUsersByName(Sname);
+    }
+
+
+    @RequestMapping(value="countRequest")
+    @ResponseBody
+    public int countRequest(){
+        HttpSession session = request.getSession();
+        return pyqService.countRequest(((MyUser)session.getAttribute("user")).getSno());
+    }
+
+
+    @RequestMapping(value="friendList/getRequest")
+    @ResponseBody
+    public  List<MyUser>  getRequest(){
+        HttpSession session = request.getSession();
+        System.out.println(userService.showFriendsRequest(((MyUser)session.getAttribute("user")).getSno()));
+        return userService.showFriendsRequest(((MyUser)session.getAttribute("user")).getSno());
+    }
+
 
 }

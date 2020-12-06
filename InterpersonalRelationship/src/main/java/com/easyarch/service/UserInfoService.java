@@ -1,7 +1,9 @@
 package com.easyarch.service;
 import com.easyarch.entity.FormValidate;
 import com.easyarch.entity.MyUser;
+import com.easyarch.entity.UserShow;
 import com.easyarch.mapper.UserMapper;
+import com.easyarch.mapper.UserShowMapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,10 +12,13 @@ import java.util.List;
 
 @Service
     public class UserInfoService {
-        //    @Autowired
-//    private LoginMapper loginMapper;
-        @Autowired
+
+    List<UserShow> userList;
+
+    @Autowired
         UserMapper userMapper;
+        @Autowired
+        UserShowMapper userShowMapper;
         //登录
         public Object loginUser(String Sno, String Spwd) {
 //        return loginMapper.loginUser(Sno);
@@ -72,6 +77,14 @@ import java.util.List;
         return userMapper.myFriends(sno);
     }
 
+    public List<UserShow> findUsersByName(String name) {
+        userList=userShowMapper.findByName(name);
+        return userList;
+    }
+
+    public List<MyUser> showFriendsRequest(String sno) {
+        return userBoardMapper.(sno);
+    }
 
 
 }

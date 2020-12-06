@@ -2,13 +2,11 @@ package com.easyarch.controller;
 
 import com.easyarch.entity.BoardMsg;
 import com.easyarch.entity.MyUser;
-import com.easyarch.mapper.BoardMsgMapper;
 import com.easyarch.service.BoardMsgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
