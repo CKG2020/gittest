@@ -81,10 +81,10 @@ import java.util.List;
         userList=userShowMapper.findByName(name);
         return userList;
     }
-
-    public List<MyUser> showFriendsRequest(String sno) {
-        return userBoardMapper.(sno);
-    }
+//
+//    public List<MyUser> showFriendsRequest(String sno) {
+//        return userBoardMapper.(sno);
+//    }
 
 
 }

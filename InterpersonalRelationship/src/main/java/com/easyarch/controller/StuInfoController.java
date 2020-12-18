@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-//@RequestMapping("/stu")
+
 @Controller
 public class StuInfoController {
 
@@ -205,14 +205,14 @@ public class StuInfoController {
         return pyqService.countRequest(((MyUser)session.getAttribute("user")).getSno());
     }
 
-
-    @RequestMapping(value="friendList/getRequest")
-    @ResponseBody
-    public  List<MyUser>  getRequest(){
-        HttpSession session = request.getSession();
-        System.out.println(userService.showFriendsRequest(((MyUser)session.getAttribute("user")).getSno()));
-        return userService.showFriendsRequest(((MyUser)session.getAttribute("user")).getSno());
-    }
+//
+//    @RequestMapping(value="friendList/getRequest")
+//    @ResponseBody
+//    public  List<MyUser>  getRequest(){
+//        HttpSession session = request.getSession();
+//        System.out.println(userService.showFriendsRequest(((MyUser)session.getAttribute("user")).getSno()));
+//        return userService.showFriendsRequest(((MyUser)session.getAttribute("user")).getSno());
+//    }
 
 
 }
