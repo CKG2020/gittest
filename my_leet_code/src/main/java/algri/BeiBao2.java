@@ -3,7 +3,7 @@ package algri;
 public class BeiBao2 {
     private final int MIN = Integer.MIN_VALUE;
 
-    @org.junit.Test
+//    @org.junit.Test
     public void test() {
         int[] w = {3, 2, 2};
         int[] v = {5, 10, 20};
